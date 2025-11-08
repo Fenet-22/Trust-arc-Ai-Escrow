@@ -1,0 +1,15 @@
+# Environment variables - PROTECT YOUR API KEYS!
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+artifacts/
+cache/
+
+# OS files
+.DS_Store

@@ -1,0 +1,624 @@
+/* styles.css - TrustArc Escrow Application Styles */
+/* Modern dark theme with cyberpunk accents for AI-powered escrow system */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global body styling with dark theme */
+body {
+  background: #0a0a0a;
+  color: #c0c0c0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main app container with gradient background */
+.app-container {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 120, 120, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120, 120, 120, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 20px;
+}
+
+/* Central content container */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Panel styling for content sections */
+.panel {
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Header section styling */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* Main title with gradient text effect */
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #c0c0c0;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #c0c0c0, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle text */
+.subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+/* Tagline styling */
+.tagline {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Step indicator for workflow progression */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+/* Individual step item */
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Step number circle */
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  border: 2px solid #444;
+  color: #888;
+  font-weight: bold;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Current step styling */
+.step-number.current {
+  background: #ffd700;
+  border-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Completed step styling */
+.step-number.completed {
+  background: #00ff00;
+  border-color: #00ff00;
+  color: #000;
+}
+
+/* Step title text */
+.step-title {
+  font-size: 0.875rem;
+  color: #888;
+  text-align: center;
+}
+
+/* Connector line between steps */
+.step-connector {
+  position: absolute;
+  top: 20px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  z-index: -1;
+}
+
+/* AI status card for verification state */
+.ai-status-card {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+/* AI status header section */
+.ai-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Status indicator dot */
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--status-color, #c0c0c0);
+  box-shadow: 0 0 10px var(--status-color, #c0c0c0);
+}
+
+/* Status text styling */
+.status-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--status-color, #c0c0c0);
+  letter-spacing: 1px;
+}
+
+/* Status subtitle */
+.status-sub {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Stats grid for metrics display */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+/* Individual stat card */
+.stat-card {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Stat label styling */
+.stat-label {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Stat value styling */
+.stat-value {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #c0c0c0;
+  margin-bottom: 4px;
+}
+
+/* Currency label */
+.stat-currency {
+  font-size: 1rem;
+  color: #888;
+  margin-left: 4px;
+}
+
+/* Input section container */
+.input-section {
+  margin-bottom: 24px;
+}
+
+/* Input label styling */
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #c0c0c0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Input wrapper for positioning */
+.input-wrapper {
+  position: relative;
+}
+
+/* Amount and address input fields */
+.amount-input, .address-input {
+  width: 100%;
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1.125rem;
+  color: #c0c0c0;
+  font-family: 'Courier New', monospace;
+}
+
+/* Input focus states */
+.amount-input:focus, .address-input:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.1);
+}
+
+/* Currency label positioning */
+.currency-label {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Work submission section */
+.work-submission-section {
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+/* Section title with icon */
+.section-title {
+  font-size: 1.2rem;
+  color: #c0c0c0;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* File input styling */
+.file-input {
+  width: 100%;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  color: #c0c0c0;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+}
+
+/* File input button styling */
+.file-input::file-selector-button {
+  background: rgba(60, 60, 60, 0.8);
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #c0c0c0;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+/* Task description textarea */
+.task-description {
+  width: 100%;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 16px;
+  color: #c0c0c0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 120px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Task description focus state */
+.task-description:focus {
+  outline: none;
+  border-color: #666;
+}
+
+/* Actions grid for buttons */
+.actions-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Action row for side-by-side buttons */
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Base action button styling */
+.action-btn {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  color: #c0c0c0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Button hover effects */
+.action-btn:hover:not(:disabled) {
+  background: rgba(60, 60, 60, 0.8);
+  border-color: #666;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Disabled button state */
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Primary action button */
+.action-btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #764ba2;
+  color: white;
+}
+
+/* Success action button */
+.action-btn.success {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  border-color: #00b09b;
+  color: white;
+}
+
+/* Danger action button */
+.action-btn.danger {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  border-color: #ff6b6b;
+  color: white;
+}
+
+/* Submit action button */
+.action-btn.submit {
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  border-color: #ffd700;
+  color: #000;
+  grid-column: 1 / -1;
+  font-weight: bold;
+}
+
+/* Status banner for notifications */
+.status-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Success status banner */
+.status-banner.success {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  color: #00ff00;
+}
+
+/* Error status banner */
+.status-banner.error {
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  color: #ff4444;
+}
+
+/* Loading status banner */
+.status-banner.loading {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+}
+
+/* Warning status banner */
+.status-banner.warning {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+}
+
+/* Verification result display */
+.verification-result {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+/* Verification header section */
+.verification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #444;
+}
+
+/* Verification score display */
+.verification-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Score value styling */
+.score-value {
+  color: var(--score-color, #c0c0c0);
+}
+
+/* Verification feedback text */
+.verification-feedback {
+  font-size: 1rem;
+  color: #c0c0c0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Issues and strengths lists */
+.issues-list, .strengths-list {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+/* Issues list items */
+.issues-list li {
+  color: #ff6b6b;
+  margin: 4px 0;
+}
+
+/* Strengths list items */
+.strengths-list li {
+  color: #00ff00;
+  margin: 4px 0;
+}
+
+/* Fee breakdown section */
+.fee-breakdown {
+  background: rgba(50, 50, 50, 0.6);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+/* Fee row in breakdown */
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Last fee row styling */
+.fee-row:last-child {
+  border-bottom: none;
+  font-weight: bold;
+  color: #00ff00;
+}
+
+/* AI analysis progress indicator */
+.ai-analysis-progress {
+  padding: 20px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #ffd700;
+  text-align: center;
+}
+
+/* Demo mode notice */
+.demo-notice {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  text-align: center;
+  color: #ffd700;
+}
+
+/* Spin animation for loading states */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Pulse animation for attention states */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Spin animation class */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse animation class */
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .panel {
+    padding: 20px;
+  }
+  
+  .step-indicator {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .step-item {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+  
+  .step-connector {
+    display: none;
+  }
+}
